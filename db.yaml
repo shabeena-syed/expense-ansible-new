@@ -17,7 +17,7 @@
       enabled: yes
       
   # checl password is alredy setup r not
-  - name: check DB connect
+  - name: check DB connect r not
     community.mysql.mysql_info:
      login_user: root
      login_password: ExpenseApp@1 # if error will come password not setup
