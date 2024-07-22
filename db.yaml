@@ -3,6 +3,10 @@
   become: yes
   vars:
    login_host: db
+  vars_prompt:
+  - name: mysql_root_password
+    prompt: please enter MYSQL root password
+    private: true
   
   tasks:
   - name: install MYSQL server
@@ -38,4 +42,4 @@
      msg: "output: {{mysql_connection_output}}" # taken from the above registerd var 
 
   - name: setup root password
-    ansible.builtin.command:
+    ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ mysql_root_password }}"
