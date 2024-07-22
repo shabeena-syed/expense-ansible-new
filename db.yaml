@@ -1,8 +1,7 @@
 - name: configure db server
   hosts: db
   become: yes
-  vars:
-   login_host: db.techzena.online
+  
   tasks:
   - name: install MYSQL server
     ansible.builtin.dnf:
@@ -19,7 +18,7 @@
     community.mysql.mysql_info:
      login_user: root
      login_password: ExpenseApp@1 # if error will come password not setup
-     login_host: "{{login_host}}"
+    
      ignore_errors: yes
      register: mysql_connection_output # output will save in this variable name
 
