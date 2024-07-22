@@ -22,9 +22,10 @@
      login_user: root
      login_password: ExpenseApp@1 # if error will come password not setup
      login_host: "{{ login_host }}"
+     filter: version
      ignore_errors: yes
      register: mysql_connection_output # output will save in this variable name
 
   - name: print output
     ansible.builtin.debug:
-     msg: "output: {{mysql_connection_output}}"
+     msg: "output: {{mysql_connection_output}}" # taken from the above registerd var 
