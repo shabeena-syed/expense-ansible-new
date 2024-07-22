@@ -8,11 +8,11 @@
      name: mysql-server
      state: latest
     
-  - name: start and enable mysql server
+  - name: start 
     ansible.builtin.service:
       name: mysql
       state: started
-      enabled: yes
+      
   # checl password is alredy setup r not
   - name: check DB connect
     community.mysql.mysql_info:
@@ -24,4 +24,4 @@
 
   - name: print output
     ansible.builtin.debug:
-     msg: " output: {{mysql_connection_output}}"
+     msg: "output: {{mysql_connection_output}}"
