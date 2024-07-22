@@ -2,7 +2,7 @@
   hosts: db
   become: yes
   vars:
-   login_hosts: db
+   login_host: db
   
   tasks:
   - name: install MYSQL server
