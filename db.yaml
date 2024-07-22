@@ -17,11 +17,11 @@
       enabled: yes
 
   - name: install python mysql dependencies
-      ansible.builtin.pip:
-       name:
-       - PyMySQL
-       - cryptography
-       executable: pip3.9
+    ansible.builtin.pip:
+     name:
+     - PyMySQL
+     - cryptography
+     executable: pip3.9
       
   # checl password is alredy setup r not
   - name: check DB connect r not
